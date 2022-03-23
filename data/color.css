@@ -1,0 +1,120 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    padding: 0;
+    /*  背景图定位 / 背景图尺寸  cover 完全铺满容器  contain 完整显示在容器内 */
+    /* background: url(../images/animate.jpg) no-repeat #000;
+    background-size: cover; */
+    /* 行高是字体1.15倍 */
+    line-height: 1.15;
+}
+
+.mainbox {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: whitesmoke;
+    width: 1000px;
+    height: 500px;
+    border-radius: 25px;
+    text-align: center;
+    padding: 5px 40px;
+    box-sizing: border-box;
+  }
+  
+  p {
+    font-size: 42px;
+    font-weight: 600;
+  }
+
+  .input{
+    position: relative;
+    background-color: whitesmoke;
+    
+    width: 100%;
+    height: 200px;
+    margin-bottom: 10px;
+    /* margin-bottom属性设置元素的下边距。 */
+    border: none;
+    border-bottom: 2px solid silver;
+    outline: none;
+    font-size: 22px;
+  }
+
+  .btn{
+    width: 200px;
+    height: 60px;
+    background: none;
+    /* 去除背景颜色 */
+    border: 4px solid;
+    /* 类似于内边框之类的东西 */
+    color: aquamarine;
+    font-size: 700;
+    /* 字体大小 */
+    text-transform: uppercase;
+    /* 转换不同元素中的文本： */
+    /* capitalize	文本中的每个单词以大写字母开头。
+    uppercase	定义仅有大写字母。
+    lowercase	定义无大写字母，仅有小写字母。 */
+    cursor: pointer;
+    /* cursor属性定义了鼠标指针放在一个元素边界范围内时所用的光标形状 */
+    /* pointer	光标呈现为指示链接的指针（一只手） */
+    font-size: 16px;
+    position: relative;
+    /* 父类相对位置 */
+}
+.btn::before,.btn::after{
+    content: "";
+    /* 内容为空 */
+    position: absolute;
+    /* 子类绝对位置 */
+    width: 14px;
+    height: 4px;
+    background: rgba(170, 168, 169, 0.9);
+    /* 颜色 */
+    transform: skewX(50deg);
+    /* transform: skew(30deg)  或者 transform: skew(30deg, 30deg);
+    参数表示倾斜角度，单位deg
+    一个参数时：表示水平方向的倾斜角度；
+    两个参数时：第一个参数表示水平方向的倾斜角度，第二个参数表示垂直方向的倾斜角度。 */
+    transition: 0.4s linear;
+
+    /* 将鼠标悬停在一个 div 元素上，
+    过渡属性的作用就是体现元素默认样式与最终样式变化的过程 */
+    /* 代码格式：transition：all 1s linear 0s； */
+    /* 第一个参数的作用是设置元素的哪些属性过渡，all表示全部过渡，width代表属性宽度过渡，其他不过渡，其他属性也一样。
+    第二个属性设置过渡需要的时长，单位s不能省略。
+    第三个属性设置过渡延迟多少秒执行，单位s不能省略 */
+    /* hover 设置鼠标移到某一元素时状态 */
+}
+.btn::before{
+    top: -4px;
+    left: 10%;
+    /*element::before 创建一个伪元素，其将成为匹配选中的元素的第一个子元素。
+    常通过 content 属性来为一个元素添加修饰性的内容。此元素默认为行内元素。 */
+}
+.btn::after{
+    bottom: -4px;
+    right: 10%;
+}
+
+/* hover 选择器
+    选择鼠标移到链接上的样式：
+    提示: :hover 选择器器可用于所有元素，不仅是链接。
+    提示: :link 选择器设置了未访问过的页面链接样式, :visited 选择器设置访问过的页面链接的样式 :active选择器设置当你点击链接时的样式。
+    注意: 为了产生预期的效果，在 CSS 定义中，:hover 必须位于 :link 和 :visited 之后！！
+*/
+.btn:hover::before{
+    left: 80%;
+}
+.btn:hover::after{
+    right: 80%;
+}
